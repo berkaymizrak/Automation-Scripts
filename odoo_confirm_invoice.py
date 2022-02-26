@@ -14,7 +14,7 @@ while True:
         if wait_function(1, "q"):
             break
 
-        if count >= 80:
+        if count >= 70:
             pyautogui.click(303, 211)  # invoices button
             if wait_function(1, "q"):
                 break
