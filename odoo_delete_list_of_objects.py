@@ -2,6 +2,8 @@ import pyautogui
 import time
 from utils import wait_function, clear_input, wait_in_progess
 
+wait_function(5)
+
 items = [
     "INV&2022&00863",
     "INV&2022&00864",

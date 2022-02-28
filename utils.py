@@ -3,22 +3,7 @@ import keyboard
 import pyautogui
 
 
-def wait_function(wait_time, pressed_key):
-    for i in range(int(wait_time / 0.05)):
-        if keyboard.is_pressed(pressed_key):
-            return True
-        time.sleep(0.05)
-
-    return False
-
-
-def clear_input(times):
-    for i in range(times):
-        pyautogui.write('\b')
-
-
 class Progress:
-
     def __init__(self):
         self.difference_now = time.time()
 
@@ -90,7 +75,27 @@ class Progress:
         return final_time_string
 
 
+def wait_function(wait_time, pressed_key='q'):
+    progress = Progress()
+    now = time.time()
+    time.sleep(0.1)
+    pause_time = int(wait_time / 0.05)
+    for i in range(pause_time):
+        if keyboard.is_pressed(pressed_key):
+            return True
+        time.sleep(0.05)
+        progress.progress(i + 1, pause_time, now, message='Counting down...')
+    print()
+    return False
+
+
+def clear_input(times):
+    for i in range(times):
+        pyautogui.write('\b')
+
+
 def wait_in_progess(pause_time):
+    print()
     print('Paused! Waiting for %s second.' % pause_time)
     progress = Progress()
     now = time.time()

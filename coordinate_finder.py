@@ -9,4 +9,3 @@ while True:
     if wait_function(1, "p"):
         print('Paused! Waiting for 10 second.')
         time.sleep(10)
-

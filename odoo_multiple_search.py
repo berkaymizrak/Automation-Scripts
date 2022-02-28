@@ -2,6 +2,8 @@ import pyautogui
 import time
 from utils import wait_function, Progress, wait_in_progess
 
+wait_function(5)
+
 items = [
     "INV&2022&00863",
     "INV&2022&00864",
@@ -382,7 +384,8 @@ for enum, item in enumerate(items):
     pyautogui.write(item, interval=0.1)
     pyautogui.press('enter')
     if enum % list_items_per_search == 0 and enum != 0:
-        print("%s items listed. Page will refresh in 10 seconds. Check the page before refresh." % list_items_per_search)
+        print(
+            "%s items listed. Page will refresh in 10 seconds. Check the page before refresh." % list_items_per_search)
         if wait_function(10, "p"):
             wait_in_progess(pause_time)
         pyautogui.click(116, 451)

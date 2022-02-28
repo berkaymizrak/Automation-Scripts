@@ -1,11 +1,13 @@
 import pyautogui
+import time
 from utils import wait_function
 
+wait_function(5)
 
 count = 0
 while True:
     count += 1
-    print('Clicking times: %s' % count)
+    print('--> Clicking times: %s' % count)
     try:
         pyautogui.click(322, 300)
         if wait_function(1, "q"):
