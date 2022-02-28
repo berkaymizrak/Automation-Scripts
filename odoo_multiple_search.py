@@ -1,6 +1,5 @@
 import pyautogui
-import time
-from utils import wait_function, Progress, wait_in_progess
+from utils import wait_function, wait_in_progess
 
 wait_function(5)
 
