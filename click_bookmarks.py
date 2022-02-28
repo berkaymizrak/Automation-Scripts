@@ -4,10 +4,10 @@ from utils import wait_function
 
 while True:
     try:
-        pyautogui.click(584, 118)
+        pyautogui.click(563, 115)
         if wait_function(1, "q"):
             break
-        pyautogui.click(698, 121)
+        pyautogui.click(660, 115)
         if wait_function(1, "q"):
             break
 
